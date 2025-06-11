@@ -1,0 +1,112 @@
+
+/* styles.css */
+:root {
+  --bg-dark: #0c0e16;
+  --accent-pink: #ff007f;
+  --accent-cyan: #00ffd5;
+  --accent-purple: #7f00ff;
+  --text-light: #e5e5e5;
+}
+* { scroll-behavior: smooth; }
+body {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  font-family: 'Segoe UI', sans-serif;
+}
+nav.navbar {
+  background: rgba(12,14,22,0.8);
+  backdrop-filter: blur(5px);
+}
+.nav-link {
+  color: var(--text-light) !important;
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--accent-cyan);
+  bottom: -2px;
+  left: 0;
+  transition: width 0.3s;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+header {
+  margin-top: 56px;
+  background: linear-gradient(120deg, var(--accent-pink), var(--accent-cyan), var(--accent-purple));
+  background-size: 300% 300%;
+  animation: bgShift 10s infinite;
+  padding: 4rem 1rem;
+}
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid var(--accent-cyan);
+  box-shadow: 0 0 20px var(--accent-purple);
+  transition: transform 0.3s;
+}
+.profile-img:hover { transform: scale(1.1); }
+.neon-text {
+  font-size: 3.5rem;
+  color: var(--accent-pink);
+  text-shadow: 0 0 10px var(--accent-pink), 0 0 20px var(--accent-purple);
+  margin-bottom: 0.5rem;
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 4px;
+  background: var(--accent-cyan);
+  bottom: -6px;
+  left: 0;
+  box-shadow: 0 0 10px var(--accent-cyan);
+}
+.info-card {
+  background: rgba(12,14,22,0.7);
+  border-left: 4px solid var(--accent-pink);
+}
+.skill {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(12,14,22,0.7);
+  border: 1px solid var(--accent-cyan);
+  border-radius: 50px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+.skill:hover { background: var(--accent-cyan); color: #000; }
+.project-card {
+  background: rgba(12,14,22,0.8);
+  border: none;
+  transition: transform 0.3s;
+}
+.project-card:hover { transform: translateY(-5px); }
+.btn-cyber {
+  background: var(--accent-pink);
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.btn-cyber:hover {
+  background: var(--accent-cyan);
+  box-shadow: 0 0 15px var(--accent-cyan);
+  color: #000;
+}
+@media (max-width: 768px) {
+  .neon-text { font-size: 2.5rem; }
+}
